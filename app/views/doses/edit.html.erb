@@ -1,0 +1,7 @@
+<h1>Edit dose</h1>
+
+<%= simple_form_for [@dose] do |f| %>
+  <%= f.input :name %>
+
+  <%= f.submit "Edit this dose", class: "btn btn-primary" %>
+<% end %>

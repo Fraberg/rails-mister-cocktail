@@ -1,0 +1,19 @@
+<h1><%= @cocktail.name.capitalize %></h1>
+<p>------------</p>
+<p>Doses * Ingredient(s):</p>
+
+<% @cocktail.doses.each do |dose| %>
+  <p><%= dose.description %> * <%= dose.ingredient.name %> (<%= link_to ('<i class="fa fa-trash" aria-hidden="true"></i>').html_safe, cocktail_dose_path(@cocktail, dose),
+        method: :delete,
+        data: { confirm: "Are you sure?" }  %>)</p>
+<% end %>
+
+<p><i class="fa fa-plus" aria-hidden="true"></i><%= link_to " Add a new dose", new_cocktail_dose_path(@cocktail) %></i></p>
+
+<p><i class="fa fa-pencil" aria-hidden="true"></i><%= link_to " Edit this cocktail", edit_cocktail_path %></p>
+
+<p><i class="fa fa-trash" aria-hidden="true"></i><%= link_to " Delete this cocktail", cocktail_path(@cocktail),
+        method: :delete,
+        data: { confirm: "Are you sure?" }  %></i></p>
+
+<p><i class="fa fa-undo" aria-hidden="true"></i><%= link_to " Back to list", cocktails_path %></p>
