@@ -1,10 +1,13 @@
-<h1>cocktails</h1>
+<div class="container">
+  <div class="row">
+    <h1>cocktails</h1>
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+      <h2><%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %></h2>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-<% @cocktails.each do |cocktail| %>
-  <h2>
-    <%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %>
-  </h2>
-
-<% end %>
 
 <h2><i class="fa fa-plus" aria-hidden="true"><%= link_to " Add a new cocktail", new_cocktail_path %></i></h2>
