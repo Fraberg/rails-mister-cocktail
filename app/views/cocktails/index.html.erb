@@ -1,13 +1,17 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <h1>cocktails</h1>
+      <div class="col-xs-6 col-sm-4">
+        <div class="card add" style="background-image: url(http://www.venusdigitalarcade.in/content/images/thumbs/0007612_d11907-verre-a-pied-luminarc-savoie-25-cl.jpeg)">
+          <h2><%= link_to "Add a new one", new_cocktail_path %></h2>
+        </div>
+      </div>
     <% @cocktails.each do |cocktail| %>
-    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-      <h2><%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %></h2>
-    </div>
+      <div class="col-xs-6 col-sm-4">
+        <% photo = cocktail.photo.url || "http://www.seriouseats.com/recipes/assets_c/2015/05/20150419-summerdaze-cocktail-Elana-Lepkowski-thumb-1500xauto-422727.jpg" %>
+        <div class="card" style="background-image: url(<%= cl_image_path photo,  crop: :fill %>)">
+          <h2><%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %></h2>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
-
-
-<h2><i class="fa fa-plus" aria-hidden="true"><%= link_to " Add a new cocktail", new_cocktail_path %></i></h2>

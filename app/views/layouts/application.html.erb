@@ -17,10 +17,12 @@
   </head>
 
   <body>
+      <!-- navbar -->
+
       <div class="navbar-wagon">
       <!-- Logo -->
       <a href="/cocktails" class="navbar-wagon-brand">
-        <img src="https://png.icons8.com/cocktail/dusk/1600" alt="logo">
+        <img src="https://t4.ftcdn.net/jpg/00/76/85/05/160_F_76850563_BWlln1Z44Wub36wT4oWmbGFNvdNgc31d.jpg" alt="logo">
       </a>
 
       <!-- Right Navigation -->
@@ -31,7 +33,6 @@
         <!-- Profile picture with dropdown list -->
         <div class="navbar-wagon-item">
           <div class="dropdown">
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li><%= link_to "All cocktails", cocktails_path %></li>
               <li><%= link_to "Add a cocktail", new_cocktail_path %></li>
@@ -51,6 +52,37 @@
         </div>
       </div>
     </div>
+
+    <!-- banner -->
+
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(89,49,50,0.6) 0%, rgba(54,54,54,0.6) 50%), url('https://i.pinimg.com/originals/ea/a4/fe/eaa4feb882ecf3a5706906a3f82e3afd.jpg');">
+      <div class="banner-content">
+
+      <div class="typed-div-in-banner">
+        <div class="typed_wrap">
+          <h1>Have a glass of <span class="typed"></span></h1>
+        </div>
+      </div>
+      </div>
+    </div>
+
     <%= yield %>
+
+    <!-- footer -->
+    <div class="footer">
+    <div class="footer-links">
+      <a href="#"><i class="fa fa-github"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      This footer is made with <i class="fa fa-heart"></i> at Le Wagon
+    </div>
+  </div>
+
   </body>
 </html>
+
+

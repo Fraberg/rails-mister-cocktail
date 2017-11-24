@@ -1,0 +1,23 @@
+.card {
+  height: 300px;
+  background: white;                          /* White background */
+  padding: 30px;                              /* Internal space */
+  margin: 15px;
+  border-radius: 4px;                         /* Small radius */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);       /* OR subtle border */
+  background-repeat: no-repeat;
+  background-size: cover !important;
+}
+
+.card > h2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(130, 130, 130) !important;
+  background-color: rgba(240, 240, 240, 0.2);
+  width: auto;
+  border-radius: 3px;
+  padding: 5px;
+
+}
