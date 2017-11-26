@@ -7,5 +7,13 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+console.log("Hello from app/javascript/packs/application.js!");
 console.log('Hello World from Webpacker')
 
+//= require jquery
+//= require bootstrap-sprockets
+
+import 'bootstrap';
+
+import { loadDynamicBannerText } from '../components/banner';
+loadDynamicBannerText();

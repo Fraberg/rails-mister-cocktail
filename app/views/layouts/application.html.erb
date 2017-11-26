@@ -5,7 +5,6 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- app/views/layouts/application.html.erb -->
     <!-- Add these line for detecting device width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,19 +53,44 @@
     </div>
 
     <!-- banner -->
-
     <div class="banner" style="background-image: linear-gradient(-225deg, rgba(89,49,50,0.6) 0%, rgba(54,54,54,0.6) 50%), url('https://i.pinimg.com/originals/ea/a4/fe/eaa4feb882ecf3a5706906a3f82e3afd.jpg');">
       <div class="banner-content">
 
-      <div class="typed-div-in-banner">
-        <div class="typed_wrap">
-          <h1>Have a glass of <span class="typed"></span></h1>
-        </div>
+      <!-- typed.js -->
+      <div class="typed">
+        <p>Have a glass of <span id="banner-typed-text"></span></p>
       </div>
+
       </div>
     </div>
 
     <%= yield %>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- footer -->
     <div class="footer">
@@ -81,6 +105,11 @@
       This footer is made with <i class="fa fa-heart"></i> at Le Wagon
     </div>
   </div>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
+  <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
 
   </body>
 </html>
